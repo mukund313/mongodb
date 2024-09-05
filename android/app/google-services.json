@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "459975362038",
+    "project_id": "mukund-madhav-0",
+    "storage_bucket": "mukund-madhav-0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459975362038:android:0ef2acb20a3cb63e7873d7",
+        "android_client_info": {
+          "package_name": "com.example.mongodb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAjujagYSybyEsXoeLmZBWgosHvOf48t4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459975362038:android:b07a7e49c64ddb0f7873d7",
+        "android_client_info": {
+          "package_name": "com.mukund.crud_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAjujagYSybyEsXoeLmZBWgosHvOf48t4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

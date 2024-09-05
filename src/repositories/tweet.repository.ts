@@ -1,5 +1,6 @@
 import TweetModel from "../database/models/tweet.model";
 import { ITweetInterface } from "../database/interfaces/tweet.interface";
+import UserModel from "../database/models/user.model";
 
 
 export const getTweetRepo = async (tweetId: string): Promise<ITweetInterface | null> => {
@@ -8,6 +9,35 @@ export const getTweetRepo = async (tweetId: string): Promise<ITweetInterface | n
 
         const tweet = await TweetModel.findOne({ tweetId: tweetId })
         return tweet;
+
+    } catch (error) {
+        console.log(error)
+        return null;
+    }
+};
+
+
+export const getAllTweetsRepo = async (): Promise<any[] | null> => {
+
+    try {
+
+        const allTweets = await TweetModel.find();
+
+        if (!allTweets || allTweets.length == 0) {
+            return null;
+
+        } 
+
+        const tweetWithUserInfo = await Promise.all(
+            allTweets.map( async(tweet) =>{
+                const admin = await UserModel.findOne({uid: tweet.adminId})
+                if(!admin){
+                    return {tweet, admin: null}
+                }
+                return {tweet, admin}
+            })
+        );
+        return tweetWithUserInfo 
 
     } catch (error) {
         console.log(error)
@@ -67,3 +97,5 @@ export const updateTweetRepo = async (tweetId: string, updatedTweet: ITweetInter
         return false;
     }
 };
+
+
